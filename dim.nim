@@ -4,6 +4,11 @@ import strformat
 import parseopt
 import strutils
 
+const TRACKS = 77
+const SIDES = 2
+const SECTORS_PER_TRACK = 8
+const BYTES_PER_SECTOR = 1024
+
 proc changeFilenameExtension(filename: string, newExtension: string) : string =
     var chunks = filename.split(".");
     return join(chunks[0..^2], ".") & "." & newExtension;
@@ -12,6 +17,7 @@ proc stripHeader(filename : string) =
     # skip 512 bytes (the two headers)
     var imageContent = readFile(filename);
     var diskContent = imageContent[0x100..^1];
+    assert(len(diskContent) == TRACKS * SIDES * SECTORS_PER_TRACK * BYTES_PER_SECTOR, "After removing the DIM header, the resulting image is the wrong size. Is it really a DIM?");
     var outputFilename = changeFilenameExtension(filename, "raw");
     writeFile(outputFilename, diskContent);
 
