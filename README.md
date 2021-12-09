@@ -25,7 +25,9 @@ Example:
 ```
 
 ### D88 conversion
-Convert a DIM image directly to D88 format so it can be written by tools such as TransDisk. It will be saved as `yourimagename.d88`.
+Convert an X68000 DIM image directly to D88 format so it can be written by tools such as TransDisk. It will be saved as `yourimagename.d88`.
+
+The encoding is X68000 standard (77 tracks, 2 sides, 8 sectors per track, 1024 bytes per sector.)
 
 Options:
  * `--verbose`: Emits a lot of debug messages that may help with identifying problems with a weird source image.
