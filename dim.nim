@@ -157,8 +157,11 @@ proc writeD88*(source: D88Image, filename: string, verbose: bool) =
             file.write(cast[uint8](0)) # no deleted tracks here! (maybe)
             file.write(cast[uint8](0)) # FDC status code all okay. no damaged tracks here, copy protection!
             
-            for i in 0..<5:
+            for i in 0..<4:
                 file.write(cast[uint8](0)) # reserved
+
+            var rpm : uint8 = 0 # 0 : 1.2, 1 : 1.44? MB?
+            file.write(rpm)
             
             file.write(cast[uint16](BYTES_PER_SECTOR)) # size of the data following this header
 
