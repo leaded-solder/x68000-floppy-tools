@@ -1,7 +1,7 @@
 # X68000 floppy tools
 Some utilities for dealing with common DIM disk images for the Sharp X68000, including those preserved by the Neo-Kobe group.
 
-Most of the information used in the production of these utilities came from [the pc98.org documentation on the DIM image format](/https://www.pc98.org/project/doc/dim.html).
+Most of the information used in the production of these utilities came from [the pc98.org documentation on the DIM image format](https://www.pc98.org/project/doc/dim.html) and [their documentation on the D88 image format](https://www.pc98.org/project/doc/d88.html).
 
 Tested against images converted using the Virtual Floppy Image Converter (VFIC) tool.
 
